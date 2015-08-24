@@ -63,8 +63,8 @@ void vendor_load_properties()
         gsm_properties();
         property_set("ro.product.device", "jflteatt");
         property_set("ro.product.model", "SAMSUNG-SGH-I337");
-        property_set("ro.build.fingerprint", "samsung/jflteuc/jflteatt:4.4.2/KOT49H/I337UCUFNB1:user/release-keys");
-        property_set("ro.build.description", "jflteuc-user 4.4.2 KOT49H I337UCUFNB1 release-keys");
+        property_set("ro.build.fingerprint", "samsung/jflteuc/jflteatt:5.0.1/LRX22C/I337UCUGOC3:user/release-keys");
+        property_set("ro.build.description", "jflteuc-user 5.0.1 LRX22C I337UCUGOC3 release-keys");
     } else if (strstr(bootloader, "R970C")) {
         /* jfltecri */
         cdma_properties("0");
@@ -99,8 +99,8 @@ void vendor_load_properties()
     } else if (strstr(bootloader, "M919")) {
         /* jfltetmo */
         gsm_properties();
-        property_set("ro.build.fingerprint", "samsung/jfltetmo/jfltetmo:4.3/JSS15J/M919UVUEMK2:user/release-keys");
-        property_set("ro.build.description", "jfltetmo-user 4.3 JSS15J M919UVUEMK2 release-keys");
+        property_set("ro.build.fingerprint", "samsung/jfltetmo/jfltetmo:4.4.4/KTU84P/M919UVUFNK2:user/release-keys");
+        property_set("ro.build.description", "jfltetmo-user 4.4.4 KTU84P M919UVUFNK2 release-keys");
         property_set("ro.product.model", "SGH-M919");
         property_set("ro.product.device", "jfltetmo");
     } else if (strstr(bootloader, "R970")) {
@@ -116,8 +116,8 @@ void vendor_load_properties()
     } else if (strstr(bootloader, "I545")) {
         /* jfltevzw */
         cdma_properties("0");
-        property_set("ro.build.fingerprint", "Verizon/jfltevzw/jfltevzw:4.3/JSS15J/I545VRUEMK2:user/release-keys");
-        property_set("ro.build.description", "jfltevzw-user 4.3 JSS15J I545VRUEMK2 release-keys");
+        property_set("ro.build.fingerprint", "Verizon/jfltevzw/jfltevzw:5.0.1/LRX22C/I545VRUGOC1:user/release-keys");
+        property_set("ro.build.description", "jfltevzw-user 5.0.1 LRX22C I545VRUGOC1 release-keys");
         property_set("ro.product.model", "SCH-I545");
         property_set("ro.product.device", "jfltevzw");
         property_set("ro.cdma.home.operator.alpha", "Verizon");

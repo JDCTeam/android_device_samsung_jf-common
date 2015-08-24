@@ -106,6 +106,10 @@ PRODUCT_PACKAGES += \
     libgenlock \
     memtrack.msm8960
 
+# Doze
+PRODUCT_PACKAGES += \
+    SamsungDoze
+
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8960
@@ -254,6 +258,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     mm.enable.smoothstreaming=true
 
+# mms
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.telephony.mms_data_profile=5
+    
 # nitz
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.rild.nitz_plmn="" \
