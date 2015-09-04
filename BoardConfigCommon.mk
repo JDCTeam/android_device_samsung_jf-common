@@ -211,4 +211,4 @@ TW_BRIGHTNESS_PATH := /sys/devices/platform/msm_fb.526593/leds/lcd-backlight/bri
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun0/file
 TW_THEME := portrait_hdpi
 #Use New Qcom Optimizations
-USE_CLANG_QCOM := true
+#USE_CLANG_QCOM := true
