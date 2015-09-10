@@ -118,6 +118,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/gps.conf:/system/etc/gps.conf \
     $(LOCAL_PATH)/gps/etc/sap.conf:/system/etc/sap.conf
 
+# IPv6 tethering
+PRODUCT_PACKAGES += \
+    ebtables \
+    ethertypes
+
 # IR
 PRODUCT_PACKAGES += \
     consumerir.msm8960
@@ -192,6 +197,7 @@ PRODUCT_PACKAGES += \
     init.carrier.rc \
     init.crda.sh \
     init.qcom.rc \
+    init.qcom.power.rc \
     init.qcom.usb.rc \
     init.target.rc \
     ueventd.qcom.rc
@@ -226,6 +232,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.speaker.location=high \
     ro.qc.sdk.audio.fluencetype=fluence
 
+# charging mode
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.enable_boot_charger_mode=1
+
 # display
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.text_cache_width=2048 \
@@ -246,6 +256,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.use_se_table_only=1 \
     ro.telephony.ril.config=newDriverCallU,newDialCode \
     ro.ril.telephony.mqanelements=6 
+    
 # gps
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.gps.agps_provider=1 \
