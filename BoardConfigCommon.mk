@@ -23,7 +23,7 @@
 # Inherit from qcom-common
 -include device/samsung/qcom-common/BoardConfigCommon.mk
 
-TARGET_SPECIFIC_HEADER_PATH += device/samsung/jflte/include
+TARGET_SPECIFIC_HEADER_PATH += device/samsung/jf-common/include
 
 COMMON_PATH := device/samsung/jf-common
 
@@ -82,6 +82,7 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_HARDWARE_CLASS += $(COMMON_PATH)/loshw
 
 # Display
+SF_START_GRAPHICS_ALLOCATOR_SERVICE := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
@@ -98,6 +99,9 @@ TARGET_SPECIFIC_HEADER_PATH += $(COMMON_PATH)/include
 
 # NFC
 BOARD_NFC_HAL_SUFFIX := msm8960
+
+# SDClang
+TARGET_USE_SDCLANG := true
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760

@@ -61,7 +61,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
-TARGET_BOOTANIMATION_HALF_RES := true
 
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
 
@@ -86,10 +85,15 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    libbt-vendor
+    android.hardware.bluetooth@1.0-impl
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bluetooth/bcm4335_prepatch.hcd:system/vendor/firmware/prepatch/bcm4335_prepatch.hcd
+    $(LOCAL_PATH)/bluetooth/bcm4335_prepatch.hcd:system/vendor/firmware/bcm4335_prepatch.hcd
+
+# Bluetooth HAL		
+PRODUCT_PACKAGES += \		
+    libbt-vendor \		
+    android.hardware.bluetooth@1.0-impl
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -98,6 +102,9 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \		
+    android.hardware.graphics.composer@2.1-impl \		
+    android.hardware.graphics.mapper@2.0-impl \
     copybit.msm8960 \
     gralloc.msm8960 \
     hwcomposer.msm8960 \
@@ -105,8 +112,8 @@ PRODUCT_PACKAGES += \
     memtrack.msm8960
 
 # Doze 
-PRODUCT_PACKAGES += \
-    SamsungDoze
+#PRODUCT_PACKAGES += \
+#    SamsungDoze
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:/system/etc/gps.conf \
@@ -126,7 +133,12 @@ PRODUCT_PACKAGES += \
 
 # IR
 PRODUCT_PACKAGES += \
+    android.hardware.ir@1.0-impl \
     consumerir.msm8960
+
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-impl
 
 # Voice processing 
 PRODUCT_PACKAGES += \
@@ -144,6 +156,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-impl \
     lights.MSM8960
     
 # Loki
@@ -166,10 +179,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 # NFC packages
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.0-impl \
     libnfc-nci \
     libnfc_nci_jni \
-    nfc_nci.bcm2079x.default \
+    nfc_nci.bcm2079x.msm8960 \
     NfcNci \
     Tag \
     com.android.nfc_extras
@@ -192,6 +206,15 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libstagefrighthw
 
+# Default OMX service to non-Treble		
+PRODUCT_PROPERTY_OVERRIDES += \		
+    persist.media.treble_omx=false		
+			
+# Power		
+PRODUCT_PACKAGES += \		
+    android.hardware.power@1.0-impl \		
+    power.msm8960
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
@@ -200,6 +223,19 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
     ueventd.qcom.rc
+
+
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl 
+
+# USB HAL		
+PRODUCT_PACKAGES += \		
+    android.hardware.usb@1.0-service		
+	    		
+# Vibrator		
+PRODUCT_PACKAGES += \		
+    android.hardware.vibrator@1.0-impl
 
 # SHIM Libs
 PRODUCT_PACKAGES += \
@@ -215,6 +251,7 @@ PRODUCT_COPY_FILES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service \
     libnetcmdiface \
     macloader \
     hostapd \
