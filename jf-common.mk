@@ -102,8 +102,8 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@2.0-impl \		
-    android.hardware.graphics.composer@2.1-impl \		
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.mapper@2.0-impl \
     copybit.msm8960 \
     gralloc.msm8960 \
@@ -207,12 +207,12 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Default OMX service to non-Treble		
-PRODUCT_PROPERTY_OVERRIDES += \		
-    persist.media.treble_omx=false		
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.media.treble_omx=false
 			
 # Power		
-PRODUCT_PACKAGES += \		
-    android.hardware.power@1.0-impl \		
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-impl \
     power.msm8960
 
 # Ramdisk
@@ -227,14 +227,14 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl 
+    android.hardware.sensors@1.0-impl
 
 # USB HAL		
-PRODUCT_PACKAGES += \		
-    android.hardware.usb@1.0-service		
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service
 	    		
 # Vibrator		
-PRODUCT_PACKAGES += \		
+PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl
 
 # SHIM Libs
